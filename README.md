@@ -1,4 +1,4 @@
-# 🏀 EuroLeague Basketball Analytics Dashboard (2016–2026)
+# 🏀 EuroLeague Basketball Analytics Report (2016–2026)
 
 > An interactive Power BI dashboard analyzing **Last 10 seasons of EuroLeague Basketball since new format was introduced** (2016–17 to 2025–26), covering team standings, player performance, Final Four history, travel impact, and budget efficiency.
 
