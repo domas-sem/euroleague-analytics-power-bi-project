@@ -50,7 +50,7 @@ The dashboard answers key questions such as:
 
 ## 🗂️ Data Sources
 
-| Dataset | Source | Seasons Covered |
+| Dataset | Source | Seasons Covered | Additional Info |
 |---|---|---|---|
 | Team Standings | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
 | Player Statistics | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
