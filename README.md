@@ -111,9 +111,9 @@ CALCULATE(
 ```
 📦 euroleague-analytics-power-bi-project
  ┣ 📂 data/
- ┃ ┣ 📄 standings_all_seasons.csv
- ┃ ┣ 📄 player_stats_all_seasons.csv
- ┃ ┗ 📄 final_four_history.csv
+ ┃ ┣ 📂 standings/
+ ┃ ┣ 📂 players_stats/
+ ┃ ┗ 📂 final_four/
  ┣ 📂 screenshots/
  ┃ ┣ 🖼️ page1_standings.png
  ┃ ┣ 🖼️ page2_travel_and_budgets.png
