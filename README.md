@@ -150,7 +150,7 @@ CALCULATE(
 **Domas Semenauskas**
 Junior Data Analyst | Kaunas, Lithuania
 
-[[LinkedIn – Domas Semenauskas](https://www.linkedin.com/in/domas-semenauskas/)]
+[[LinkedIn – Domas Semenauskas](https://www.linkedin.com/in/domas-semenauskas/)
 
 
 ***
