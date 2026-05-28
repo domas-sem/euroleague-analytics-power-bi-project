@@ -51,7 +51,7 @@ The dashboard answers key questions such as:
 ## 🗂️ Data Sources
 
 | Dataset | Source | Seasons Covered |
-|---|---|---|
+|---|---|---|---|
 | Team Standings | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
 | Player Statistics | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
 | Team Budgets | Retrieved from Basketnews.com articles for premium subscribers | Some of the seasons | ⚠️ Not included in repo |
