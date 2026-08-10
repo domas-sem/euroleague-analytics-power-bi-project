@@ -148,7 +148,7 @@ CALCULATE(
 ## 👤 Author
 
 **Domas Semenauskas**
-Junior Data Analyst | Kaunas, Lithuania
+Junior Data Analyst | Lithuania
 
 [LinkedIn – Domas Semenauskas](https://www.linkedin.com/in/domas-semenauskas/)
 
