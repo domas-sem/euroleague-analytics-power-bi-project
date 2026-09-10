@@ -1,6 +1,6 @@
 # 🏀 EuroLeague Basketball Analytics Report (2016–2026)
 
-> An interactive Power BI Report analyzing **Last 10 seasons of EuroLeague Basketball since new format was introduced** (2016–17 to 2025–26), covering team standings, player performance, Final Four history, travel impact, and budget efficiency.
+> An interactive Power BI report analyzing the last 10 EuroLeague Basketball seasons since the modern competition format was introduced—from 2016–17 to 2025–26. The report covers team standings, player performance, Final Four history, travel impact, and budget efficiency.
 
 ***
 
@@ -9,116 +9,317 @@
 This project was built as part of a **data analytics portfolio** to demonstrate skills in data modeling, DAX, Power Query, and interactive dashboard design using real sports data.
 
 The dashboard answers key questions such as:
-- What are the tendencies between regular season rank and playoff performance?
+
+- What are the tendencies between regular-season rank and playoff performance?
 - Does a higher budget guarantee more wins?
-- Which teams travel the most — and does it affect performance?
-- Who are the most efficient players based on different KPI's?
+- Which teams travel the most—and does it affect performance?
+- Which players lead the league across different KPIs?
+- How does an individual player compare with league-average production and playing time?
 - Which teams dominate the modern EuroLeague?
 
 ***
 
 ## 📊 Report Pages
 
-### 1. 🏆 Regular season standings and playoffs
-- Season-by-season regular season standings for all EuroLeague teams
-- Win/Loss records, home vs. away performance, overtimes 
-- Interactive season slicer for year-by-year comparison
-- Final Four: clustered bar charts showcasing which teams according to regular season ranking most often make it to the final stage of the tournament?
+### 1. 🏆 Regular Season Standings and Playoffs
+
+- Season-by-season regular-season standings for all EuroLeague teams.
+- Win/loss records, home versus away performance, and overtime context.
+- Interactive season slicer for year-by-year comparison.
+- Final Four clustered bar charts showing how often teams at different regular-season ranks advance to the tournament’s final stage.
+- Historical perspective on title conversion, Final Four appearances, and regular-season success.
 
 ### 2. 💰 Budgets & Travel
-- Scatter chart: **Budget vs. Wins** — visual league context for each season
-- Clustered bar chart: **Cost Per Win** metric — custom DAX measure ranking team financial efficiency
-- Matrix: Combining travel distance rankings per season, budget and team ranking comparison
 
-### 3. 👤 Player Stats
-- Clustered bar chart: **Offensive vs. Defensive Player Impact** - custom DAX measures evaluating players impact on the court
-- Stacked bar chart: **Percentage breakdown** answering the question - where each player makes his points from? (FT, 2PT, 3PT)
-- Line Chart: Linear measure showcasing player's statistical graph change over seasons
-- Interactive season slicer for year-by-year comparison
+- Scatter chart: **Budget vs. Regular-Season Wins**, providing team context for each available season.
+- Bubble size represents total regular-season travel distance.
+- Clustered bar chart: **Cost Per Win**, using a custom DAX measure to rank financial efficiency.
+- Table combining club rank, wins, losses, salary budget, and travel distance.
+- Salary-budget conditional formatting tiers for quick differentiation between:
+  - Elite-budget teams: \( \geq 19 \) M€.
+  - High-budget teams: 15–18.99 M€.
+  - Mid-budget teams: 10–14.99 M€.
+  - Lean-budget teams: \( < 10 \) M€.
+- Budget and travel data are available only for selected seasons, clearly indicated within the report.
 
-### 4. 👤 Player Stats inside of league context
-- Interactive KPI slicer for statistical measure comparison
-- Scatter chart: **Minutes played vs. KPI's (PIR,AST,TR,BLK,STL)**
-- Average reference lines to identify elite vs. below-average players
-- Drillthrough page per player showing individual KPI cards
-- Interactive season slicer for year-by-year comparison
-- Top 15 players by each KPI value per season
+### 3. 👤 Player Stats Overview
 
+- Clustered bar chart: **Offensive vs. Defensive Player Impact**, using custom DAX measures to evaluate player contribution.
+- Stacked bar chart: player point-source breakdown across free throws, 2PT field goals, and 3PT field goals.
+- Line chart showing player statistical changes across seasons.
+- Interactive season slicer for historical comparison.
+- Player drillthrough navigation for deeper individual analysis.
+
+### 4. 👤 Player Stats in League Context
+
+- Interactive KPI selector for **PIR, PTS, AST, TR, STL, and BLK**.
+- Dynamic chart titles, KPI values, league benchmarks, and Top 10 rankings driven by the selected KPI.
+- Scatter chart: **Minutes Played vs. Selected KPI**, comparing player opportunity with output.
+- Dynamic reference lines for:
+  - League-average minutes played.
+  - League-average value for the selected KPI.
+- Four-quadrant player classification:
+  - **Upper-left:** Low minutes · Above-average KPI.
+  - **Upper-right:** High minutes · Above-average KPI.
+  - **Lower-left:** Low minutes · Below-average KPI.
+  - **Lower-right:** High minutes · Below-average KPI.
+- Dynamic Top 10 player ranking that recalculates correctly for each selected KPI and season.
+- Selected-player profile panel displaying:
+  - Selected KPI value.
+  - Difference versus league average.
+  - League rank for the selected KPI.
+  - Minutes per game.
+- Report-page tooltip that explains each hovered player’s performance quadrant.
+- Interactive season slicer for year-by-year comparison.
 
 ***
-
 
 ## 🗂️ Data Sources
 
 | Dataset | Source | Seasons Covered | Additional Info |
 |---|---|---|---|
-| Team Standings | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
-| Player Statistics | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
-| Team Budgets | Retrieved from Basketnews.com articles for premium subscribers | Some of the seasons | ⚠️ Not included in repo |
-| Travel Distances | Retrieved from Basketnews.com articles for premium subscribers | Some of the seasons | ⚠️ Not included in repo |
-| Final Four History | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 |
+| Team Standings | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 | Regular-season standings and team results |
+| Player Statistics | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 | Traditional player statistics and KPI inputs |
+| Team Budgets | Basketnews.com premium articles | Selected seasons | ⚠️ Not included in the repository |
+| Travel Distances | Basketnews.com premium articles | Selected seasons | ⚠️ Not included in the repository |
+| Final Four History | [EuroLeagueBasketball.net](https://www.euroleaguebasketball.net) | 2016–17 to 2025–26 | Final Four and title history |
 
-Data is stored and refreshed via **SharePoint** folder integration using Power Query.
+Data is stored and refreshed through a **SharePoint folder** integration using Power Query.
 
 ***
 
 ## 🛠️ Technical Implementation
 
 ### Data Model
-- Galaxy Schema (Fact Constellation) — 6 fact tables sharing 2 centralized dimension tables (Clubs Dimension, Seasons Dimension), enabling cross-filtering across all report pages
-- Relationships connecting all fact tables (Standings, Players, Budgets, Travel, Final Four) through shared keys
-- Relationships managed to avoid many-to-many conflicts
+
+- Galaxy schema / fact constellation design, with six fact tables sharing centralized **Clubs** and **Seasons** dimensions.
+- Fact tables cover standings, player statistics, budgets, travel, and Final Four data.
+- Shared dimensions enable consistent cross-filtering across report pages.
+- Relationships are managed to avoid unnecessary many-to-many conflicts.
+- A disconnected **KPI Selector** table enables dynamic player KPI analysis without altering the underlying fact-table structure.
 
 ### Power Query
-- Data loaded from SharePoint folders (CSV files per season)
-- Appended across 10 seasons using `Append Queries`
-- Column type enforcement, null handling, name standardization applied
-- Club name standardization applied (since teams are changing their names based on sponsorships)
-- Travel distance data merged from separate fact table
+
+- Data loaded from SharePoint folders using season-level CSV files.
+- Player and standings data appended across 10 seasons with `Append Queries`.
+- Column data types enforced and null values handled.
+- Club-name standardization applied to account for sponsorship-related naming changes.
+- Travel-distance data merged from a separate fact table.
+- Player names standardized through a dedicated player-name dimension for consistent filtering and profile analysis.
 
 ### Key DAX Measures
 
+#### Team efficiency: cost per regular-season win
 
--- Team efficiency: how much does each win cost?
 ```dax
-Cost Per Win = 
+Cost Per Win =
 DIVIDE(
     SUM(Budgets[Players/coaches salaries (net) M/€]),
     SUM(Standings[Wins])
 )
 ```
--- Player defensive impact.
+
+#### Player defensive impact
+
 ```dax
-Defensive Value = (SUM('Append_stats_traditional'[DR]) + SUM('Append_stats_traditional'[BLK]) + SUM('Append_stats_traditional'[STL])) * -1
+Defensive Value =
+(
+    SUM('Append_stats_traditional'[DR]) +
+    SUM('Append_stats_traditional'[BLK]) +
+    SUM('Append_stats_traditional'[STL])
+) * -1
 ```
 
--- Player offensive impact (without PTS).
+#### Player offensive impact, excluding points scored
+
 ```dax
-Offensive Value = SUM('Append_stats_traditional'[OR]) + SUM('Append_stats_traditional'[AST]) + SUM('Append_stats_traditional'[FD])
+Offensive Value =
+SUM('Append_stats_traditional'[OR]) +
+SUM('Append_stats_traditional'[AST]) +
+SUM('Append_stats_traditional'[FD])
 ```
--- PIR calculation.
+
+#### KPI selector
+
 ```dax
-PIR All Players = 
-CALCULATE(
-    AVERAGE('Append_stats_traditional'[PIR]),
-    REMOVEFILTERS('Append_stats_traditional'[Player])
+Selected KPI Name =
+SELECTEDVALUE(
+    'KPI Selector'[KPI],
+    "PIR"
 )
 ```
 
+```dax
+Selected KPI Value =
+SWITCH(
+    [Selected KPI Name],
+    "PIR", [Player PIR],
+    "PTS", [Player Points per Game],
+    "AST", [Player Assists per Game],
+    "TR",
+        [Player Offensive Rebounds per Game] +
+        [Player Defensive Rebounds per Game],
+    "STL", AVERAGE('Append_stats_traditional'[ST]),
+    "BLK", AVERAGE('Append_stats_traditional'[BLK])
+)
+```
+
+#### Dynamic titles
+
+```dax
+KPI Scatter Title =
+"Minutes Played vs. " &
+[Selected KPI Name] &
+" — All Players"
+```
+
+```dax
+Top 10 KPI Title =
+"Top 10 Players by " &
+[Selected KPI Name]
+```
+
+#### League-average KPI benchmark
+
+```dax
+Selected KPI Average All Players =
+AVERAGEX(
+    ALLSELECTED('Append_stats_traditional'[Player]),
+    [Selected KPI Value]
+)
+```
+
+#### KPI leader
+
+```dax
+Selected KPI Leader =
+VAR LeaderTable =
+    TOPN(
+        1,
+        ADDCOLUMNS(
+            ALLSELECTED('Append_stats_traditional'[Player]),
+            "@KPIValue", [Selected KPI Value]
+        ),
+        [@KPIValue], DESC,
+        'Append_stats_traditional'[Player], ASC
+    )
+RETURN
+    CONCATENATEX(
+        LeaderTable,
+        'Append_stats_traditional'[Player],
+        ", "
+    )
+```
+
+#### Selected player versus league average
+
+```dax
+Selected Player vs League Average =
+VAR PlayerValue =
+    [Selected Player KPI]
+
+VAR LeagueAverage =
+    CALCULATE(
+        [Selected KPI Average All Players],
+        REMOVEFILTERS('dimension-players-names-formatted'[Player])
+    )
+
+RETURN
+    IF(
+        ISBLANK(PlayerValue),
+        BLANK(),
+        PlayerValue - LeagueAverage
+    )
+```
+
+#### Player KPI rank
+
+```dax
+Selected Player KPI Rank =
+VAR PlayerValue =
+    [Selected Player KPI]
+
+VAR RankValue =
+    RANKX(
+        ALL('dimension-players-names-formatted'[Player]),
+        CALCULATE([Selected KPI Value]),
+        PlayerValue,
+        DESC,
+        DENSE
+    )
+
+RETURN
+    IF(
+        ISBLANK(PlayerValue),
+        BLANK(),
+        RankValue
+    )
+```
+
+#### Dynamic player performance quadrant
+
+```dax
+Player Performance Quadrant =
+VAR PlayerMinutes =
+    [Player Minutes per Game]
+
+VAR PlayerKPI =
+    [Selected KPI Value]
+
+VAR AverageMinutes =
+    CALCULATE(
+        [Min All Players],
+        REMOVEFILTERS('Append_stats_traditional'[Player])
+    )
+
+VAR AverageKPI =
+    CALCULATE(
+        [Selected KPI Average All Players],
+        REMOVEFILTERS('Append_stats_traditional'[Player])
+    )
+
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(PlayerMinutes) || ISBLANK(PlayerKPI),
+            BLANK(),
+
+        PlayerMinutes < AverageMinutes &&
+        PlayerKPI >= AverageKPI,
+            "Low minutes -  Above average KPI",
+
+        PlayerMinutes >= AverageMinutes &&
+        PlayerKPI >= AverageKPI,
+            "High minutes -  Above average KPI",
+
+        PlayerMinutes < AverageMinutes &&
+        PlayerKPI < AverageKPI,
+            "Low minutes -  Below average KPI",
+
+        PlayerMinutes >= AverageMinutes &&
+        PlayerKPI < AverageKPI,
+            "High minutes -  Below average KPI"
+    )
+```
+
 ***
+
 ## 📁 Repository Structure
 
-```
+```text
 📦 euroleague-analytics-power-bi-project
  ┣ 📂 data/
  ┃ ┣ 📂 standings/
  ┃ ┣ 📂 players_stats/
  ┃ ┗ 📂 final_four/
  ┣ 📂 screenshots/
- ┃ ┣ 🖼️ page1_standings.png
- ┃ ┣ 🖼️ page2_travel_and_budgets.png
- ┃ ┣ 🖼️ page3_players_stats.png
- ┃ ┗ 🖼️ page4_players_stats_league_context.png
+ ┃ ┣ 🖼️ page_1_standings_overview.png
+ ┃ ┣ 🖼️ page_2_travel_and_budgets.png
+ ┃ ┣ 🖼️ page_3_player_stats_overview.png
+ ┃ ┣ 🖼️ page_4_player_stats_league_context.png
+ ┃ ┣ 🖼️ interactivity_1.png
+ ┃ ┣ 🖼️ interactivity_2.png
+ ┃ ┗ 🖼️ interactivity_3.png
  ┗ 📄 README.md
 ```
 
@@ -126,32 +327,39 @@ CALCULATE(
 
 ## 🖼️ Report Screenshots
 
-| Standings | Travel and Budgets |
+| Regular Season Standings | Budgets & Travel |
 |---|---|
-| ![](screenshots/page1_standings.png) | ![](screenshots/page2_travel_and_budgets.png) |
+| ![](screenshots/page_1_standings_overview.png) | ![](screenshots/page_2_travel_and_budgets.png) |
 
-| Players Stats | Players Stats / League Context |
+| Player Stats Overview | Player Stats in League Context |
 |---|---|
-| ![](screenshots/page3_players_stats.png) | ![](screenshots/page4_players_stats_league_context.png) |
+| ![](screenshots/page_3_player_stats_overview.png) | ![](screenshots/page_4_player_stats_league_context.png) |
+
+### Interactivity and Analysis Features
+
+| KPI and season interaction | Dynamic player-profile comparison | Performance-quadrant tooltip |
+|---|---|---|
+| ![](screenshots/interactivity_1.png) | ![](screenshots/interactivity_2.png) | ![](screenshots/interactivity_3.png) |
+
 ***
 
 ## 💡 Key Insights
 
-- Teams with the **highest budgets** generally finish in the top 8, but **Cost Per Win** reveals several high-spending underperformers
-- Some teams travel **significantly more** than others each season — up to 2x the league average, but it doesn't reflect on teams performance to a high extent
-- The **PIR vs. Minutes scatter** clearly separates leaders from role players
-- **A small number of clubs** (Real Madrid, Olympiacos, Anadolu Efes, Fenerbahçe, CSKA Moscow) dominate Final Four appearances historically
-- A weird tendency that the no. 1 Club in the regular season rankings never wins the tournament. This tendency was broken this season since the no. 1 seed - Olympiacos won the Euroleague.
+- Teams with the **highest budgets** generally finish in the top eight, but the Cost Per Win measure also identifies high-spending teams with weaker financial efficiency.
+- Travel requirements vary significantly across EuroLeague teams and seasons. In the available data, some teams travel close to twice as far as others, although travel distance alone does not explain team performance.
+- The KPI selector makes it possible to compare distinct player roles. A player may rank highly in PIR, points, assists, rebounds, steals, or blocks while receiving very different levels of playing time.
+- The Minutes vs. KPI scatterplot identifies four useful player profiles: established high-impact players, high-impact players with lower opportunity, high-minute players below the selected KPI average, and lower-minute players below the KPI benchmark.
+- A small group of clubs—including Real Madrid, Olympiacos, Anadolu Efes, Fenerbahçe, and CSKA Moscow—accounts for a large share of modern EuroLeague Final Four appearances.
+- Historically, the regular-season No. 1 seed often did not convert first place into the title. The 2025–26 season broke that pattern when Olympiacos, the No. 1 seed, won the EuroLeague.
 
 ***
 
 ## 👤 Author
 
-**Domas Semenauskas**
+**Domas Semenauskas**  
 Junior Data Analyst | Lithuania
 
 [LinkedIn – Domas Semenauskas](https://www.linkedin.com/in/domas-semenauskas/)
-
 
 ***
 
