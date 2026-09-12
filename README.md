@@ -343,6 +343,51 @@ RETURN
 
 ***
 
+## 🛠️ Tools and Skills
+
+### Tools Used
+
+- **Power BI Desktop** — Used to build the interactive report, design report pages, create visuals, configure slicers, drillthrough navigation, tooltips, and dashboard interactions.
+- **Power Query** — Used for data ingestion, transformation, data-type validation, appending season-level CSV files, merging travel data, handling null values, and standardizing club and player names.
+- **DAX** — Used to create calculated measures for Cost Per Win, offensive and defensive player impact, dynamic KPI selection, league-average benchmarks, player rankings, dynamic titles, and performance-quadrant classification.
+- **SharePoint Folder Integration** — Used as the central data-storage and refresh source for season-level CSV files imported into Power BI.
+- **Devin Desktop** — Used to support web-scraping and collection of historical EuroLeague standings, player statistics, Final Four history, and other structured source data from public basketball websites.
+- **CSV files** — Used as the project’s source-data format, organized by season and subject area for Power Query ingestion and model refresh.
+- **GitHub** — Used to document the project, publish supporting data and screenshots, and present the final dashboard as part of a data-analytics portfolio.
+
+### Skills Demonstrated
+
+- Web scraping and structured sports-data collection with Devin Desktop
+- Data-source assessment, data extraction, and CSV-based data management
+- Data cleaning and transformation with Power Query
+- Appending and combining multi-season datasets
+- Data-type enforcement, null-value handling, and data-quality validation
+- Club-name and player-name standardization across multiple seasons
+- Relational data modeling using a galaxy-schema / fact-constellation approach
+- Fact and dimension table design
+- Relationship management and cross-filtering in Power BI
+- DAX measure development and reusable calculation logic
+- Financial-efficiency analysis using Cost Per Win
+- Dynamic KPI selection with a disconnected selector table
+- Dynamic titles, rankings, and league-average benchmarking
+- Player-performance segmentation with quadrant analysis
+- Interactive report design with slicers, drillthrough, tooltips, and conditional formatting
+- Sports-performance analysis and financial-context analysis
+- Dashboard storytelling, insight communication, and limitation reporting
+- Portfolio documentation and project publishing with GitHub
+
+### How the Tools Worked Together
+
+The project began with collecting and structuring historical EuroLeague data using Devin Desktop and publicly available basketball sources. The resulting season-level CSV files were stored in SharePoint and loaded into Power BI through a SharePoint Folder connection.
+
+Power Query was then used to combine, clean, standardize, and prepare the data for analysis. The transformed tables were organized into a galaxy-schema data model, with shared Clubs and Seasons dimensions connecting the standings, player statistics, budgets, travel, and Final Four fact tables.
+
+DAX measures added the analytical layer of the report. They enabled Cost Per Win calculations, dynamic KPI switching, league-average comparisons, player rankings, reference lines, dynamic labels, and player-performance quadrants. Power BI report-page features—including slicers, drillthrough, tooltips, visual interactions, and conditional formatting—then turned those calculations into an interactive analytics experience.
+
+Finally, GitHub is used to document the business questions, methodology, source limitations, DAX logic, dashboard features, and screenshots for portfolio presentation.
+
+***
+
 ## 💡 Key Insights
 
 - Teams with the **highest budgets** generally finish in the top eight, but the Cost Per Win measure also identifies high-spending teams with weaker financial efficiency.
