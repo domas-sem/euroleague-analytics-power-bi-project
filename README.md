@@ -386,6 +386,12 @@ DAX measures added the analytical layer of the report. They enabled Cost Per Win
 
 Finally, GitHub is used to document the business questions, methodology, source limitations, DAX logic, dashboard features, and screenshots for portfolio presentation.
 
+### AI-Assisted Development
+
+Perplexity AI was used as a development-support tool during the project. It assisted with structuring the analysis, refining the README documentation, troubleshooting Power BI and DAX logic, drafting and improving selected DAX measures, and clarifying technical concepts related to data modeling, Power Query, and report design.
+
+All final decisions—including the data model, source selection, transformations, DAX implementation, visual design, validation, and interpretation of results—were reviewed, adapted, and implemented by the author.
+
 ***
 
 ## 💡 Key Insights
